@@ -58,6 +58,14 @@ const config = {
             exclude: /node_modules/
         }]
     },
+    node: {
+        console: true,
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+        __filename: true,
+        __dirname: true
+    },
     plugins: [
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
