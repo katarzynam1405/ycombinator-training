@@ -1,6 +1,6 @@
 import getFromApi from './API/API'
 import show30News from './button/button';
-import './style.scss';
+import './styles/style.scss';
 
 
 getFromApi().then(getData).catch(e => console.log(e));
