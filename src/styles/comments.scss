@@ -1,0 +1,16 @@
+@import 'mixins';
+.comments{
+    border-bottom: 2px $menu-orange solid;
+    padding-bottom: 30px;
+    ul{
+        padding: 40px !important;
+        list-style-type: none;
+        font-size: 12px;
+        li .comment--info>p{
+            display: inline-block;
+            font-size: 10px;
+            padding-right: 5px; 
+            color: $font-gray;
+        }
+    }
+}

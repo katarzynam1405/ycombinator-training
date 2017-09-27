@@ -1,0 +1,31 @@
+@import 'mixins';
+
+.footer{
+  .footer-header{
+    font-size: 14px;
+    color: $font-gray;
+    font-weight: 400;
+  }
+  .footer__menu{
+    text-align: center; 
+    ul.foote__menu__list{
+      font-size: 11px;
+      list-style-type: none;
+      margin: 10px;
+      li{
+        display: inline-block;
+        &::after{
+          content: " |"
+        }
+      }
+    }
+  }
+   .footer__search{
+      text-align: center; 
+      margin: 20px;
+      label{
+        color: $font-gray;
+        font-size: 14px;
+      }
+    }
+}

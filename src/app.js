@@ -1,9 +1,20 @@
-import {groupBy} from 'lodash/collection'
-import people from './people'
-import './style.scss';
+import getFromApi from './API/API'
+import show30News from './button/button';
+import './styles/style.scss';
 
 
-const managerGroups = groupBy(people, 'manager')
+getFromApi().then(getData).catch(e => console.log(e));
 
-const root = document.querySelector('#root')
-root.innerHTML = `<pre>${JSON.stringify(managerGroups, null, 2)}</pre>`
+const store = {}; 
+function getData(stories){
+    stories.forEach((stories)=>console.log(stories.title));
+    return store.stories = stories;
+}
+// console.log(store, "hi")
+
+// function showNews(store){
+//    console.log(store, 'im here!!')
+    
+// }
+
+show30News(getData);
