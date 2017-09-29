@@ -1,20 +1,26 @@
-import getFromApi from './API/API'
-import show30News from './button/button';
+import getFromApi from './API/API';
+import createNews from './news/news';
+import show30News from './button/button'; 
+
 import './styles/style.scss';
 
-
-getFromApi().then(getData).catch(e => console.log(e));
+getFromApi(count).then(parseJson).catch(e => console.log(e));
 
 const store = {}; 
-function getData(stories){
-    stories.forEach((stories)=>console.log(stories.title));
-    return store.stories = stories;
+
+function parseJson(stories){
+    console.log(stories)
+   store.stories = stories;
+   store.stories.forEach((stories)=> createNews(stories))
 }
-// console.log(store, "hi")
 
-// function showNews(store){
-//    console.log(store, 'im here!!')
-    
-// }
+console.log(store,"store");
 
-show30News(getData);
+var count=0;
+
+function moreNews(){
+    console.log(count += 30);
+    getFromApi(count).then(parseJson).catch(e => console.log(e));
+}
+
+show30News(moreNews)

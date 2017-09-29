@@ -1,3 +1,3 @@
-export default function show30News(getData){
-    document.querySelector('button#button').addEventListener('click', getData)
+export default function show30News(moreNews){
+    document.querySelector('button.button.more').addEventListener('click', moreNews)
 }
