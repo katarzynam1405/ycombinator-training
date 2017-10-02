@@ -1,26 +1,25 @@
-import getFromApi from './API/API';
 import createNews from './news/news';
 import show30News from './button/button'; 
+import getNewsApi from './API/newsAPI';
 
 import './styles/style.scss';
 
-getFromApi(count).then(parseJson).catch(e => console.log(e));
+let page=1;
+getNewsApi(page).then(renderNews).catch(e => console.log(e));
+
 
 const store = {}; 
 
-function parseJson(stories){
-    console.log(stories)
-   store.stories = stories;
-   store.stories.forEach((stories)=> createNews(stories))
+function renderNews(currentStories){
+    store.stories = currentStories;
+    Array.from(store.stories).map(createNews)
 }
-
-console.log(store,"store");
-
-var count=0;
+//init page as a number
 
 function moreNews(){
-    console.log(count += 30);
-    getFromApi(count).then(parseJson).catch(e => console.log(e));
+    //add page on every click more button
+    console.log(page ++);
+    getNewsApi(page).then(renderNews).catch(e => console.log(e));
 }
 
 show30News(moreNews)
