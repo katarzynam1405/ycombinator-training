@@ -14,4 +14,3 @@ export default function getNewsApi(page){
                 return stories ? JSON.parse(stories):{}; 
             }))
     })}
-    
