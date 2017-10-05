@@ -11,7 +11,6 @@ export default function getNewsApi(page){
             })
             .then(function(stories){
                 document.querySelector('button.button.more').removeAttribute('disabled');
-                console.log(stories.hits, "json");
                 return stories ? JSON.parse(stories):{}; 
             }))
     })}
