@@ -13,7 +13,8 @@ const store = {};
 
 function renderNews(currentStories){
     store.stories = currentStories;
-    Array.from(store.stories).map(createNews)
+    console.log(currentStories.hits, "z app js");
+    Array.from(currentStories.hits).map(createNews)
 }
 
 function moreNews(){
