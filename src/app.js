@@ -8,7 +8,6 @@ import './styles/style.scss';
 let page=1;
 getNewsApi(page).then(renderNews).catch(e => console.log(e));
 
-
 const store = {}; 
 
 function renderNews(currentStories){
