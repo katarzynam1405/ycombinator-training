@@ -1,6 +1,8 @@
 import createNews from './news/news';
 import show30News from './button/button'; 
 import getNewsApi from './API/newsAPI';
+import sendToCommentApi from './comments';
+
 
 import './styles/style.scss';
 
@@ -13,7 +15,8 @@ const store = {};
 function renderNews(currentStories){
     store.stories = currentStories;
     console.log(currentStories.hits, "z app js");
-    Array.from(currentStories.hits).map(createNews)
+    Array.from(currentStories.hits).map(createNews);
+   Array.from(currentStories.hits).forEach((hits)=> sendToCommentApi(hits.objectID))
 }
 
 function moreNews(){
@@ -22,4 +25,4 @@ function moreNews(){
     getNewsApi(page).then(renderNews).catch(e => console.log(e));
 }
 
-show30News(moreNews)
+show30News(moreNews);
