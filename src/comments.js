@@ -2,17 +2,16 @@
     import createComment from './comments/comments';
 
     import './styles/style.scss';
+     getCommentsApi().then(createComment).catch(e => console.log(e));
 
     const store = {}; 
 
-    getCommentsApi().then(createComment).catch(e => console.log(e));
-
-    export default function sendToCommentApi(objectId){
-        console.log(objectId);
-       getCommentsApi(objectId).then(createComment).catch(e => console.log(e));
+    export default function sendToCommentApi(objectID){
+        console.log(objectID);
+        getCommentsApi(objectID).then(createComment).catch(e => console.log(e));
     };
 
-    function renderComments(currentComment){
-        store.comment = currentComment;
-        console.log(currentComment, 'z comments.js!!!!!!');
+    function renderComments(currentComments){
+        store.comment.hits = currentComments;
+        console.log(currentComments, 'z comments.js!!!!!!');
     }

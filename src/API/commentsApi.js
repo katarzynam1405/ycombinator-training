@@ -1,13 +1,13 @@
-export default function getCommentsApi(postId){
-    console.log(postId);
+export default function getCommentsApi(objectID){
+    console.log(objectID);
     return new Promise((resolve, reject)=>{
         resolve(
-            fetch(`http://hn.algolia.com/api/v1/search?tags=comment,story_${postId}`)
+            fetch(`http://hn.algolia.com/api/v1/search?tags=comment,story_${objectID}`)
             .then((response)=>{
              return response.json();
             })
             .then(function(comment){
-                console.log(comment, 'z api')
-                return comment; 
+                console.log(comment.hits, 'z api')
+                return comment.hits; 
             }))
     })}

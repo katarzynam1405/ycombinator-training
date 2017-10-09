@@ -3,7 +3,6 @@ import show30News from './button/button';
 import getNewsApi from './API/newsAPI';
 import sendToCommentApi from './comments';
 
-
 import './styles/style.scss';
 
 //init page as a number
