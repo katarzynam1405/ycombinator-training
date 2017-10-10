@@ -2,7 +2,7 @@
     import createComment from './comments/comments';
 
     import './styles/style.scss';
-     getCommentsApi().then(createComment).catch(e => console.log(e));
+     getCommentsApi(3730267).then(createComment).catch(e => console.log(e));
 
     const store = {}; 
 

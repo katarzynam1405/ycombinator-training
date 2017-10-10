@@ -5,7 +5,9 @@ export default function createNews(stories){
         <div class="news-list__post-info"><p class="score">Score: ${stories.points} |</p><p class="author">Author: ${stories.author} |</p><p class="comment"><a href="comments.html">Comments: ${stories.num_comments ? stories.num_comments : 0 } </a></p></div>`;
 
     const news = document.createElement('li');
-
     news.innerHTML = newsHTML;
+    news.setAttribute('data', stories.objectID);
+    
     newsList.appendChild(news);
+    
 }
