@@ -1,7 +1,8 @@
 var moment = require('moment');
 
 export default function createComment(comments){
-    const commentsList = document.querySelector('.comments-list');
+    console.log(comments, 'dhksjhfk');
+    const commentsList = document.body;
     let i;
     const max = comments.length;
     for(i = 0; i<max; i++){

@@ -11,8 +11,7 @@ const config = {
     context: path.resolve(__dirname, 'src'),
     entry: {
         app: './app.js',
-        jobs: './jobs.js',
-        comments: './comments.js'
+        jobs: './jobs.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

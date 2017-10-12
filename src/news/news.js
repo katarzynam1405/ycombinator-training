@@ -6,8 +6,7 @@ export default function createNews(stories){
 
     const news = document.createElement('li');
     news.innerHTML = newsHTML;
-    news.setAttribute('data', stories.objectID);
-    
+    console.log(stories.objectID);
+    news.setAttribute('data-id', stories.objectID)
     newsList.appendChild(news);
-    
 }

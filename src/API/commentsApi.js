@@ -7,7 +7,7 @@ export default function getCommentsApi(objectID){
              return response.json();
             })
             .then(function(comment){
-                console.log(comment.hits, 'z api')
+                console.log(comment.hits, 'z comment api')
                 return comment.hits; 
             }))
     })}
