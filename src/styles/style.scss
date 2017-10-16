@@ -46,6 +46,21 @@ button.button.more{
   }
 }
 
+.hidden{
+  display: none;
+}
+
+.show-comments img{
+  padding: 0 10px;
+  cursor: pointer;
+   -webkit-transition:-webkit-transform 1s;
+    transition: transform 1s;
+  &:hover{
+   -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
 @media all and (max-width: $mini-mobile-breakpoint){
   .main-header .main-header__menu {
     font-size: 12px;

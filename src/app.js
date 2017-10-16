@@ -20,18 +20,21 @@ function renderNews(currentStories){
 }
 
 function renderComments(){
-    Array.from(store.stories.hits).forEach((hits)=>{
-        console.log(hits.objectID);
-        let newsID = hits.objectID;
-        console.log(newsID);
+    // get li elemnts
+    const posts = newsList.querySelectorAll('li');
+    Array.from(posts).forEach((post) => {
+        let postId = post.dataset.id;
         //get return from commentsApi, send comments and rendered news to createComment
-        getCommentsApi(newsID).then((comments) => createComment(hits, comments)).catch(e => console.log(e));
+        getCommentsApi(postId).then((comments) => createComment(post, comments)).catch(e => console.log(e));
     });
 }
+
+
 function moreNews(){
 //add page on every click more button
-    console.log(page ++);
+    page ++;
     getNewsApi(page).then(renderNews).then(renderComments).catch(e => console.log(e));
 }
+
 
 show30News(moreNews);
