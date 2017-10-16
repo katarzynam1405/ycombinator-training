@@ -1,5 +1,3 @@
-const fetchJsonp = require('fetch-jsonp');
-
 export default function getNewsApi(page){
 
     return new Promise((resolve, reject)=>{

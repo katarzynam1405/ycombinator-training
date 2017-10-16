@@ -17,7 +17,6 @@ function renderNews(currentStories){
     store.stories = currentStories;
     console.log(currentStories.hits, "z app js");
     Array.from(currentStories.hits).map(createNews);
-//    Array.from(currentStories.hits).forEach((hits)=> sendToCommentApi(hits.objectID))
 }
 
 function renderComments(){
@@ -25,7 +24,8 @@ function renderComments(){
         console.log(hits.objectID);
         let newsID = hits.objectID;
         console.log(newsID);
-        getCommentsApi(newsID).then(createComment).catch(e => console.log(e));
+        //get return from commentsApi, send comments and rendered news to createComment
+        getCommentsApi(newsID).then((comments) => createComment(hits, comments)).catch(e => console.log(e));
     });
 }
 function moreNews(){
