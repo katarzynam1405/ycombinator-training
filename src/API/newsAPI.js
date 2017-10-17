@@ -1,7 +1,4 @@
-const fetchJsonp = require('fetch-jsonp');
-
 export default function getNewsApi(page){
-
     return new Promise((resolve, reject)=>{
         document.querySelector('button.button.more').setAttribute('disabled', 'disabled');
         resolve(

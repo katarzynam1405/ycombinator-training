@@ -18,7 +18,7 @@ function renderJobs(currentJobs){
 
 function moreNews(){
 //add page on every click more button
-    console.log(page ++);
+    page ++;
     getJobsApi(page).then(renderJobs).catch(e => console.log(e));
 }
 
