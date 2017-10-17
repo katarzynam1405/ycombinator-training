@@ -1,8 +1,9 @@
 import createNews from './news/news';
-import show30News from './button/button'; 
+import show20News from './button/buttonNews'; 
 import getNewsApi from './API/newsAPI';
 import getCommentsApi from './API/commentsAPI'
 import createComment from './comments/comments';
+import searchNews from './searchEngine/search';
 
 import './styles/style.scss';
 
@@ -29,12 +30,12 @@ function renderComments(){
     });
 }
 
-
 function moreNews(){
 //add page on every click more button
     page ++;
     getNewsApi(page).then(renderNews).then(renderComments).catch(e => console.log(e));
 }
 
+show20News(moreNews);
 
-show30News(moreNews);
+searchNews();
