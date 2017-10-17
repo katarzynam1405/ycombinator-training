@@ -1,5 +1,5 @@
 import createNews from './news/news';
-import show20News from './button/buttonNews'; 
+import show30News from './button/button'; 
 import getNewsApi from './API/newsAPI';
 import getCommentsApi from './API/commentsAPI'
 import createComment from './comments/comments';
@@ -12,13 +12,11 @@ getNewsApi(page).then(renderNews).then(renderComments).catch(e => console.log(e)
 
 const store = {}; 
 const newsList = document.querySelector('ol.news-list');
-const input = document.querySelector('#search-input');
 
 function renderNews(currentStories){
     store.stories = currentStories;
     console.log(currentStories.hits, "z app js");
     Array.from(currentStories.hits).map(createNews);
-    input.dispatchEvent(new Event('keyup'));
 }
 
 function renderComments(){
@@ -31,17 +29,12 @@ function renderComments(){
     });
 }
 
+
 function moreNews(){
 //add page on every click more button
     page ++;
     getNewsApi(page).then(renderNews).then(renderComments).catch(e => console.log(e));
 }
 
-show20News(moreNews);
 
-function searchNews() {
-    input.addEventListener('keyup', (event) => {
-        console.log(event.target.value);
-    })
-};
-searchNews();
+show30News(moreNews);

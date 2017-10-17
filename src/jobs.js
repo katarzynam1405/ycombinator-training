@@ -1,5 +1,5 @@
 import createJobs from './jobs/jobs';
-import show20Jobs from './button/buttonJobs'; 
+import show30News from './button/button'; 
 import getJobsApi from './API/jobsAPI';
 
 import './styles/style.scss';
@@ -16,10 +16,10 @@ function renderJobs(currentJobs){
     Array.from(store.jobs).map(createJobs)
 }
 
-function moreJobs(){
+function moreNews(){
 //add page on every click more button
     page ++;
     getJobsApi(page).then(renderJobs).catch(e => console.log(e));
 }
 
-show20Jobs(moreJobs)
+show30News(moreNews)
