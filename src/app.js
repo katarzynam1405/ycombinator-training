@@ -37,5 +37,4 @@ function moreNews(){
 }
 
 show20News(moreNews);
-
 searchNews();

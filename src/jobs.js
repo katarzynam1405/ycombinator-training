@@ -22,4 +22,4 @@ function moreJobs(){
     getJobsApi(page).then(renderJobs).catch(e => console.log(e));
 }
 
-show20Jobs(moreJobs)
+show20Jobs(moreJobs);
