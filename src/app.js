@@ -18,10 +18,11 @@ function renderNews(currentStories){
     store.stories = currentStories;
     console.log(currentStories.hits, "z app js");
     Array.from(currentStories.hits).map(createNews);
+    searchNews(newsList);
 }
 
 function renderComments(){
-    // get li elemnts
+    // get li elemnts   
     const posts = newsList.querySelectorAll('li');
     Array.from(posts).forEach((post) => {
         let postId = post.dataset.id;
@@ -37,6 +38,6 @@ function moreNews(){
 }
 
 show20News(moreNews);
-searchNews();
+
 
 //test
