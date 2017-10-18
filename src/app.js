@@ -3,7 +3,7 @@ import show20News from './button/buttonNews';
 import getNewsApi from './API/newsAPI';
 import getCommentsApi from './API/commentsAPI'
 import createComment from './comments/comments';
-import searchNews from './searchEngine/search';
+import searchNews from './searchEngine/searchNews';
 
 import './styles/style.scss';
 
