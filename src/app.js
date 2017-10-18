@@ -16,7 +16,6 @@ const newsList = document.querySelector('ol.news-list');
 
 function renderNews(currentStories){
     store.stories = currentStories;
-    console.log(currentStories.hits, "z app js");
     Array.from(currentStories.hits).map(createNews);
     searchNews(newsList);
 }
