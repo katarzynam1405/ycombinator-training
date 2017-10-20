@@ -2,7 +2,7 @@ export default function searchNews(newsList) {
     const input = document.querySelector('#search-input.news');
 
     const news = Array.from(newsList.querySelectorAll('li'));
-    console.log(news.length, 'search');
+    const pagination = document.querySelector('.pagination');
 
     input.addEventListener('input', function (event) {
         let inputValue = event.target.value.toLowerCase();
@@ -15,11 +15,18 @@ export default function searchNews(newsList) {
             }
         }
 
-        for (var i = 0; i < news.length; i++) {
-            if (news[i].innerHTML.toLowerCase().indexOf(inputValue) !== -1) {
-                news[i].classList.remove('hidden');
-            }
+        const searchResults = news.filter((oneNews)=>{
+            return oneNews.innerHTML.toLowerCase().indexOf(inputValue) !== -1
+        })
+
+        searchResults.forEach((searchResult) => searchResult.classList.remove('hidden'));
+
+        console.log(searchResults);
+
+        if(searchResults.length >= 20){
+            pagination.classList.remove('hidden');
         }
-        document.querySelector('button.button.more-news').style.display = "none";
+     
+        document.querySelector('button.button.more-news').style.display = 'none';
     });
 };

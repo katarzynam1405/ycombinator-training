@@ -1,7 +1,7 @@
 import createNews from './news/news';
-import show20News from './button/buttonNews'; 
 import getNewsApi from './API/newsAPI';
-import getCommentsApi from './API/commentsAPI'
+import show20News from './button/buttonNews'; 
+import getCommentsApi from './API/commentsAPI';
 import createComment from './comments/comments';
 import searchNews from './searchEngine/searchNews';
 
@@ -9,10 +9,10 @@ import './styles/style.scss';
 
 //init page as a number
 let page=1;
-getNewsApi(page).then(renderNews).then(renderComments).catch(e => console.log(e));
-
 const store = {}; 
 const newsList = document.querySelector('ol.news-list');
+
+getNewsApi(page).then(renderNews).then(renderComments).catch(e => console.log(e));
 
 function renderNews(currentStories){
     store.stories = currentStories;
@@ -37,6 +37,3 @@ function moreNews(){
 }
 
 show20News(moreNews);
-
-
-//test
