@@ -15,12 +15,15 @@
       margin: 0px;
     }
     /*main style */
-    
+    a{
+        color: #000;
+        text-decoration: none;
+    }
+
     a:hover,
     a:visited,
     a:focus,
-    a:active,
-    a:-webkit-any-link {
+    a:active {
         color: $font-gray;
         text-decoration: none;
     }

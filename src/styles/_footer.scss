@@ -15,7 +15,13 @@
       li{
         display: inline-block;
         &::after{
-          content: " |"
+          content: " |";
+          color: $font-gray;
+          text-decoration: none;
+        }
+        a{
+          color: $font-gray;
+          text-decoration: none;
         }
       }
     }

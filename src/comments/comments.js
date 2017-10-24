@@ -1,7 +1,7 @@
 var moment = require('moment');
 
 export default function createComment(news, comments){
-    console.log(news, comments, 'news = > comments');
+    // console.log(news, comments, 'news = > comments');
     const commentListUl = document.createElement('ul');
     commentListUl.classList.add('comments', 'hidden');
 ;

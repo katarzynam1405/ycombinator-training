@@ -1,26 +1,27 @@
 import createNews from './news/news';
-import show30News from './button/button'; 
 import getNewsApi from './API/newsAPI';
-import getCommentsApi from './API/commentsAPI'
+import show20News from './button/buttonNews'; 
+import getCommentsApi from './API/commentsAPI';
 import createComment from './comments/comments';
+import searchNews from './searchEngine/searchNews';
 
 import './styles/style.scss';
 
 //init page as a number
 let page=1;
-getNewsApi(page).then(renderNews).then(renderComments).catch(e => console.log(e));
-
 const store = {}; 
 const newsList = document.querySelector('ol.news-list');
 
+getNewsApi(page).then(renderNews).then(renderComments).catch(e => console.log(e));
+
 function renderNews(currentStories){
     store.stories = currentStories;
-    console.log(currentStories.hits, "z app js");
     Array.from(currentStories.hits).map(createNews);
+    searchNews(newsList);
 }
 
 function renderComments(){
-    // get li elemnts
+    // get li elemnts   
     const posts = newsList.querySelectorAll('li');
     Array.from(posts).forEach((post) => {
         let postId = post.dataset.id;
@@ -29,12 +30,10 @@ function renderComments(){
     });
 }
 
-
 function moreNews(){
 //add page on every click more button
     page ++;
     getNewsApi(page).then(renderNews).then(renderComments).catch(e => console.log(e));
 }
 
-
-show30News(moreNews);
+show20News(moreNews);

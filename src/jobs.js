@@ -1,25 +1,26 @@
 import createJobs from './jobs/jobs';
-import show30News from './button/button'; 
 import getJobsApi from './API/jobsAPI';
+import show20Jobs from './button/buttonJobs'; 
+import searchJobs from './searchEngine/searchJobs';
 
 import './styles/style.scss';
 
 //init page as a number
 let page=1;
-getJobsApi(page).then(renderJobs).catch(e => console.log(e));
-
-
 const store = {}; 
+
+getJobsApi(page).then(renderJobs).catch(e => console.log(e));
 
 function renderJobs(currentJobs){
     store.jobs = currentJobs;
-    Array.from(store.jobs).map(createJobs)
+    Array.from(store.jobs).map(createJobs);
+    searchJobs();
 }
 
-function moreNews(){
+function moreJobs(){
 //add page on every click more button
     page ++;
     getJobsApi(page).then(renderJobs).catch(e => console.log(e));
 }
 
-show30News(moreNews)
+show20Jobs(moreJobs);
