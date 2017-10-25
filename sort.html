@@ -20,10 +20,10 @@
                     <li><a href="#"> login </a></li>
                 </ul>
             </div>
-           <div class="search-form__index">
-              <a href="/sort.html"><h5> Click to sort news by:</h5></a>
-               <select id ="sort-by-date" disabled>
-                    <option selected value="3days">Last 3 days</option>
+            <div class="search-form">
+              <a href="/sort.html"><h5> Sort news by:</h5></a>
+               <select id ="sort-by-date">
+                    <option value="3days">Last 3 days</option>
                     <option value="week">Last week</option>
                     <option value="month">Last month</option>
                 </select>
@@ -33,7 +33,6 @@
                 <ol class="news-list">
                 </ol>
                 <div class="pagination hidden"></div>
-                <button class="button more-news">More</button>
             </div>
             <div class="footer">
                 <h4 class="footer-header" align="center">The project is a news.ycombinator.com portal clone</h4>
@@ -61,6 +60,6 @@
         </div>
     </div>
     <script src="dist/commons.js"></script>
-    <script src="dist/app.bundle.js"></script>
+    <script src="dist/sort.bundle.js"></script>
 </body>
 </html>
