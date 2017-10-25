@@ -41,7 +41,6 @@ export default function searchNews(newsList) {
 
     function pagination(page, searchResults) {
         const results = searchResults.slice((page * serchedPrePage), ((page + 1)*serchedPrePage));
-        console.log(results);
         results.forEach((searchResult) => searchResult.classList.remove('hidden'));
     }
 };
