@@ -17,11 +17,10 @@ const threeDaysAgo = moment().subtract('days', 1).unix();
 
 let endDate;
 
-searchForm.addEventListener('change', function(event){
+searchForm.addEventListener('change', function(event) {
     let target = event.target.value;
-    console.log(target);
 
-    if(target == '3days') {
+    if (target == '3days') {
         newsList.innerHTML = "";
         endDate = threeDaysAgo;
     } else if (target == 'week') {
@@ -30,17 +29,18 @@ searchForm.addEventListener('change', function(event){
     } else if (target == 'month') {
         newsList.innerHTML = "";
         endDate = monthAgo;
-    } 
+    }
     sortByDateApi(endDate).then(renderNews).then(renderComments).catch(e => console.log(e));
 })
 
-const store = {}; 
+const store = {};
 
-function renderNews(currentStories){
+function renderNews(currentStories) {
     store.stories = currentStories;
     Array.from(currentStories.hits).map(createNews);
 };
-function renderComments(){
+
+function renderComments() {
     const posts = newsList.querySelectorAll('li');
     Array.from(posts).forEach((post) => {
         let postId = post.dataset.id;
