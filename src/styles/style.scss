@@ -42,7 +42,7 @@
 }
 
 button.button.more-news,
-button.button.more-jobs {
+button.button.more-jobs{
   cursor: pointer;
   margin-top: 20px;
   margin-left: 20px;
@@ -68,7 +68,17 @@ button.button.more-jobs {
     transform: rotate(180deg);
   }
 }
-
+a.sort__button.index.button{
+    float: right;
+    padding: 0 10px;
+    margin: 10px;
+    border-radius: 3% !important;
+    background-color: $menu-orange;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    color: white !important;
+}
 
 @media all and (max-width: $mini-mobile-breakpoint){
   .main-header .main-header__menu {

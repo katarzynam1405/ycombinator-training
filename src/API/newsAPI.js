@@ -7,7 +7,9 @@ export default function getNewsApi(page){
              return response.text()
             })
             .then(function(stories){
-                document.querySelector('button.button.more-news').removeAttribute('disabled');
+                if(JSON.parse(stories).hits.length != 0) {
+                    document.querySelector('button.button.more-news').removeAttribute('disabled');
+               }
                 return stories ? JSON.parse(stories):{}; 
             }))
     })}

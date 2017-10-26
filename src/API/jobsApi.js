@@ -7,8 +7,9 @@ export default function getJobsApi(page){
              return response.json();
             })
             .then(jobs =>{
-                document.querySelector('button.button.more-jobs').removeAttribute('disabled');
-                console.log(jobs);
+                if(jobs.hits.length != 0) {
+                    document.querySelector('button.button.more-jobs').removeAttribute('disabled');
+                }
                 return jobs.hits;
          })
     )})

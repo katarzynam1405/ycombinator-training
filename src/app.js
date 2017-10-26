@@ -7,10 +7,11 @@ import searchNews from './searchEngine/searchNews';
 
 import './styles/style.scss';
 
+const newsList = document.querySelector('ol.news-list');
+
 //init page as a number
 let page=1;
 const store = {}; 
-const newsList = document.querySelector('ol.news-list');
 
 getNewsApi(page).then(renderNews).then(renderComments).catch(e => console.log(e));
 

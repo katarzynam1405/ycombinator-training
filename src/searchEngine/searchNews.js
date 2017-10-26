@@ -37,7 +37,7 @@ export default function searchNews(newsList) {
             pagination(page, searchResults);
         });
     }
-    });
+});
 
     function pagination(page, searchResults) {
         const results = searchResults.slice((page * serchedPrePage), ((page + 1)*serchedPrePage));

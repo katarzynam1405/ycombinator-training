@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>jobs</title>
+    <title>Ycombiantor</title>
 </head>
 
 <body>
@@ -15,16 +15,24 @@
                     <li><a href="#"> comments |</a></li>
                     <li><a href="#"> show |</a></li>
                     <li><a href="#"> ask |</a></li>
-                    <li><a href="#"> jobs |</a></li>
+                    <li><a href="./jobs.html"> jobs |</a></li>
                     <li><a href="#"> submit </a></li>
                     <li><a href="#"> login </a></li>
                 </ul>
             </div>
+            <div class="search-form">
+              <a href="/sort.html"><h5> Sort news by:</h5></a>
+               <select id ="sort-by-date">
+                    <option value="3days">Last 3 days</option>
+                    <option value="week">Last week</option>
+                    <option value="month">Last month</option>
+                </select>
+                
+            </div>
             <div class="main-content">
-                <ul class="jobs">
-                </ul>
+                <ol class="news-list">
+                </ol>
                 <div class="pagination hidden"></div>
-            <button class="button more-jobs">More</button>
             </div>
             <div class="footer">
                 <h4 class="footer-header" align="center">The project is a news.ycombinator.com portal clone</h4>
@@ -45,13 +53,13 @@
                 <div class="footer__search">
                     <form>
                         <label for="serch-input">Search: </label>
-                        <input id="search-input" class="jobs" type="text"  name="search" placeholder="Search..">
+                        <input id="search-input" class="news" type="text"  name="search" placeholder="Search..">
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <script src="dist/commons.js"></script>
-    <script src="dist/jobs.bundle.js"></script>
+    <script src="dist/sort.bundle.js"></script>
 </body>
 </html>
