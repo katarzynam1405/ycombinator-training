@@ -8,8 +8,6 @@ import './styles/style.scss';
 const moment = require('moment');
 
 const searchForm = document.querySelector('#sort-by-date');
-const selects = searchForm.querySelectorAll('option');
-
 const newsList = document.querySelector('ol.news-list');
 
 const currentTime = moment().unix();
@@ -19,22 +17,22 @@ const threeDaysAgo = moment().subtract('days', 1).unix();
 
 let endDate;
 
-for(let i = 0; i < selects.length; i++) {
-    selects[i].addEventListener('click', function(event){
-        let target = event.target.value;
-        if(target == '3days') {
-            newsList.innerHTML = "";
-            endDate = threeDaysAgo;
-        } else if (target == 'week') {
-            newsList.innerHTML = "";
-            endDate = weekAgo;
-        } else if (target == 'month') {
-             newsList.innerHTML = "";
-             endDate = monthAgo;
-        } 
-        sortByDateApi(endDate).then(renderNews).then(renderComments).catch(e => console.log(e));
-    });
-}
+searchForm.addEventListener('change', function(event){
+    let target = event.target.value;
+    console.log(target);
+
+    if(target == '3days') {
+        newsList.innerHTML = "";
+        endDate = threeDaysAgo;
+    } else if (target == 'week') {
+        newsList.innerHTML = "";
+        endDate = weekAgo;
+    } else if (target == 'month') {
+        newsList.innerHTML = "";
+        endDate = monthAgo;
+    } 
+    sortByDateApi(endDate).then(renderNews).then(renderComments).catch(e => console.log(e));
+})
 
 const store = {}; 
 
