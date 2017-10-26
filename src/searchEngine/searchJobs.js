@@ -43,7 +43,6 @@ export default function searchJobs() {
 
     function pagination(page, jobsSerachResults) {
         const results = jobsSerachResults.slice((page * serchedPrePage), ((page + 1)*serchedPrePage));
-        console.log(results);
         results.forEach((result) => result.classList.remove('hidden'));
     }
 };

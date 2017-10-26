@@ -1,7 +1,7 @@
 import createNews from './news/news';
 import getCommentsApi from './API/commentsAPI';
 import createComment from './comments/comments';
-import sortByDateApi from './sort/sortApi/sortByDateApi';
+import sortByDateApi from './API/sortApi/sortByDateApi';
 
 import './styles/style.scss';
 

@@ -1,6 +1,6 @@
 var moment = require('moment');
 
-export default function createJobs(jobs){
+export default function createJobs(jobs) {
     const jobsList = document.querySelector('ul.jobs');
     const jobsTime = moment(jobs.time).toString();
     
